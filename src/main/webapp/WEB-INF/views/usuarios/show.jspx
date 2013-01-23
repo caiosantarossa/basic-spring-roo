@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<page:show id="ps_br_com_cssoftware_seguranca_model_Usuario"
+		object="${usuario}" path="/usuarios" z="cGOlWAJ/GjEGSv66lVlXQAsMZYI=">
+		<field:display field="nome"
+			id="s_br_com_cssoftware_seguranca_model_Usuario_nome"
+			object="${usuario}" z="THKQldhHtUlVQ9Cf4963k4sewOA=" />
+		<field:display field="login"
+			id="s_br_com_cssoftware_seguranca_model_Usuario_login"
+			object="${usuario}" z="xsL8LkKjJftgsr/hA6d/nKZVWIs=" />
+		<field:display field="email"
+			id="s_br_com_cssoftware_seguranca_model_Usuario_email"
+			object="${usuario}" z="Ppx/jih/nfVTsCmZxjE5yU6J73A=" />
+		<field:display field="permissoes"
+			id="s_br_com_cssoftware_seguranca_model_Usuario_permissoes"
+			object="${usuario}" z="f9Xc3dACitzPzVHQtcrfBOvGfZU=" />
+		<field:display field="ativo"
+			id="s_br_com_cssoftware_seguranca_model_Usuario_ativo"
+			object="${usuario}" z="yoOYw1dadOmYkGoKJGtxwlZYRos=" />
+
+	</page:show>
+</div>

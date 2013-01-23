@@ -33,8 +33,8 @@
           <spring:param name="form" />
         </spring:url>
         <spring:message arguments="${field}" code="global_menu_new" var="add_message" htmlEscape="false" />
-        <a href="${fn:escapeXml(create_url)}" class="label success" title="${add_message}">
-          ${fn:substring(add_message, 0, 1)}
+        <a href="${fn:escapeXml(create_url)}" class="btn" title="${add_message}">
+          ${add_message}
         </a>
       </div>
     </div>

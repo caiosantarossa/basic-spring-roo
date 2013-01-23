@@ -1,0 +1,24 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+.error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	padding: 8px 35px 8px 14px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.modal form {
+	margin: 0px;
+}
+
+.btn {
+	margin-right: 5px;
+}

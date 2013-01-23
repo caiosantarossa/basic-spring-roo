@@ -21,18 +21,28 @@
       <div class="page-header">
         <h2>${label} <small>${title_msg}</small></h2>
       </div>
+      
+		<div>
+			<spring:url value="${path}" var="create_url">
+			<spring:param name="form" />
+			</spring:url>
+			<spring:message arguments="${typeName}" code="global_menu_new" var="add_message" htmlEscape="false" />
+			<a href="${fn:escapeXml(create_url)}" class="btn" title="${add_message}">
+			${fn:escapeXml(add_message)}
+			  </a>
+		</div>
+		
+		<br/>
+      
       <c:choose>
         <c:when test="${not empty items}">
           <jsp:doBody />
         </c:when>
         <c:otherwise>
           <spring:message arguments="${label}" code="entity_not_found" var="entity_not_found"/>
-          <div class="span12">
-	        <div class="alert-message warning">
-	          <a class="close" href="#">x</a>
-	          <p><strong>${entity_not_found}</strong></p>
+	        <div class="alert">
+	          ${entity_not_found}
 	        </div>
-          </div>
         </c:otherwise>
       </c:choose>
     

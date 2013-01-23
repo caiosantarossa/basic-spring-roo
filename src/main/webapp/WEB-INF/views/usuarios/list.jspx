@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_br_com_cssoftware_seguranca_model_Usuario" items="${usuarios}" z="l34UWavNa/XgExz53gcRcC9q38w=">
+        <table:table data="${usuarios}" id="l_br_com_cssoftware_seguranca_model_Usuario" path="/usuarios" z="uU19OTDXJY8B5ePlNX1kSQ1A9zg=">
+            <table:column id="c_br_com_cssoftware_seguranca_model_Usuario_nome" property="nome" z="upYWDZjUwrnaCt63pr5beXtDOoc="/>
+            <table:column id="c_br_com_cssoftware_seguranca_model_Usuario_login" property="login" z="a+8fvkuzKFuzx96RWb+S1lvbkLU="/>
+            <table:column id="c_br_com_cssoftware_seguranca_model_Usuario_email" property="email" z="epO6r4HSs/awWm/vqTUOE8oDOq8="/>
+            <table:column id="c_br_com_cssoftware_seguranca_model_Usuario_ativo" property="ativo" z="WXUs1Vz/Sic6wA+TpNxQ5O9RHC4="/>
+            <table:column id="c_br_com_cssoftware_seguranca_model_Usuario_permissoes" property="permissoes" z="3MAW1ellGpnnJ6/HBj4TryjLgeA="/>
+        </table:table>
+    </page:list>
+</div>

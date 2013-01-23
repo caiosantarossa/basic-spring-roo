@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_br_com_cssoftware_seguranca_model_Permissao" modelAttribute="permissao" path="/permissaos" render="${empty dependencies}" z="MvFwChBrsDm6ChZBUOkrX9OatKI=">
+        <field:input field="nome" id="c_br_com_cssoftware_seguranca_model_Permissao_nome" required="true" z="user-managed"/>
+        <field:textarea field="descricao" id="c_br_com_cssoftware_seguranca_model_Permissao_descricao" z="user-managed"/>
+        <field:select field="usuarios" id="c_br_com_cssoftware_seguranca_model_Permissao_usuarios" itemValue="id" items="${usuarios}" multiple="true" path="/usuarios" z="IqZ9/ILgXR96TIytx/E6gTdYZhQ="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_br_com_cssoftware_seguranca_model_Permissao" render="${not empty dependencies}" z="4ze9MT8/FXtWM2zMBEzxH2QqkhY="/>
+</div>

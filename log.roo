@@ -7,3 +7,42 @@ web mvc setup
 perform package
 perform eclipse
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-17 22:54:11
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-18 12:30:46
+security setup
+persistence setup --database HYPERSONIC_IN_MEMORY --provider HIBERNATE
+entity jpa --class ~.model.Usuario --testAutomatically
+entity jpa --class ~.seguranca.model.Usuario --testAutomatically
+field string --fieldName nome --notNull --sizeMin 3 --sizeMax 50
+field string --fieldName login --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName senha --notNull --sizeMin 3 --sizeMax 100
+field string --fieldName email
+field boolean --fieldName ativo --notNull true
+hint
+hint entities
+hint
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-18 14:05:08
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-18 14:05:22
+entity jpa --class ~.seguranca.model.Permissao --testAutomatically
+field string --fieldName nome --notNull --sizeMax 50
+web mvc scaffold all
+hint
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-18 14:13:07
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-18 14:13:20
+web mvc scaffold --class ~.web.UsuarioController --backingType ~.seguranca.model.Usuario
+web mvc scaffold --class ~.web.PermissaoController --backingType ~.seguranca.model.Permissao
+web mvc scaffold --backingType ~.seguranca.model.Permissao --class ~.web.PermissaoController 
+web mvc scaffold --class ~.web.UsuarioController --backingType ~.seguranca.model.Usuario
+field set --fieldName permissoes --type ~.seguranca.model.Permissao --cardinality MANY_TO_MANY --class ~.seguranca.model.Usuario 
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-18 17:05:46
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-18 17:05:56
+web mvc scaffold --class ~.web.PermissaoController --backingType ~.seguranca.model.Permissao
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-19 11:41:55
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-19 15:19:00
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-21 16:05:16
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-21 17:14:35
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-21 22:27:54
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-21 23:32:29
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-22 14:40:15
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-22 17:16:08

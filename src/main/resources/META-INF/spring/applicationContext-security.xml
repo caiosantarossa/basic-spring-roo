@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<http auto-config="true" use-expressions="true">
+		<form-login login-page="/login" authentication-failure-url="/login?login_error=t" />
+		<logout logout-success-url="/login" />
+		<intercept-url pattern="/resources/**" access="permitAll" />
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/usuarios" access="hasRole('Administrador')" />
+		<intercept-url pattern="/permissaos" access="hasRole('Administrador')" />
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+	</http>
+
+	<!-- Configure Authentication mechanism -->
+	<authentication-manager alias="authenticationManager">
+		<!-- SHA-256 values can be produced using 'echo -n your_desired_password 
+			| sha256sum' (using normal *nix environments) -->
+		<authentication-provider>
+			<password-encoder hash="sha-256" />
+			<user-service>
+				<user name="admin"
+					password="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+					authorities="Administrador" />
+				<user name="user"
+					password="04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb"
+					authorities="Usuario" />
+			</user-service>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT U.login AS username, U.senha as password, U.ativo as enabled FROM t_seg_usuario U where U.login=?"
+				authorities-by-username-query="SELECT U.login as username, A.nome as authority FROM t_seg_usuario U left join t_seg_usuario_permissao UA on U.id=UA.usuarios left join t_seg_permissao A on UA.permissoes = A.id WHERE U.login=?" />
+		</authentication-provider>
+	</authentication-manager>
+	<!-- Security event logging -->
+	<beans:bean id="loggerListener"
+		class="org.springframework.security.authentication.event.LoggerListener" />
+</beans:beans>

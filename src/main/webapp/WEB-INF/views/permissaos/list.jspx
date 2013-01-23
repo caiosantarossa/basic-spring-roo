@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_br_com_cssoftware_seguranca_model_Permissao" items="${permissaos}" z="H0saCNbfWh1yxFhc8ZsxCN7vD8U=">
+        <table:table data="${permissaos}" id="l_br_com_cssoftware_seguranca_model_Permissao" path="/permissaos" z="o2BCydyVERxBu8oxGVWEoRWGRjY=">
+            <table:column id="c_br_com_cssoftware_seguranca_model_Permissao_nome" property="nome" z="HJLR1sC1VBPOpGA/1NlySnhYGJo="/>
+            <table:column id="c_br_com_cssoftware_seguranca_model_Permissao_descricao" property="descricao" z="7oMZ8xH/c8chtJxvPJ40FGFa4do="/>
+            <table:column id="c_br_com_cssoftware_seguranca_model_Permissao_usuarios" property="usuarios" z="Mjk5cSWE6J6o1/u01N9snpFDwNE="/>
+        </table:table>
+    </page:list>
+</div>
